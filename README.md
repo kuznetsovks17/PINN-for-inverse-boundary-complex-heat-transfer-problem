@@ -5,14 +5,18 @@ Describe the scientific problem, method, and main result.
 
 The system describing radiative and conductive heat transfer is considered
 
-$
-\frac{\partial \theta}{\partial t}-\textrm{Fo}\Delta\theta + \textrm{Fo}\Xi_{rad}(|\theta|\theta^3-\varphi)=0, 
-$
 $$
--S\Delta \varphi +\alpha (\varphi - |\theta|\theta^3)=0, \;\;\;\mathbf{x}\in\Omega\times[0,1].
+\begin{aligned}
+\frac{\partial \theta}{\partial t}
+- \mathrm{Fo}\,\Delta \theta
++ \mathrm{Fo}\,\Xi_{\mathrm{rad}}
+\left( |\theta|\,\theta^3 - \varphi \right)
+&= 0, \\[6pt]
+- S\,\Delta \varphi
++ \alpha \left( \varphi - |\theta|\,\theta^3 \right)
+&= 0, \qquad \mathbf{x} \in \Omega \times [0,1].
+\end{aligned}
 $$
-Here $\theta$ is the dimensionless temperature, $\varphi$ is the average radiation intensity.
-
 
 <p align="center">
   <img src="assets/gifs/overview.gif" width="600">
