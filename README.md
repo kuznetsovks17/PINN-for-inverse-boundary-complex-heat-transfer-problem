@@ -14,14 +14,12 @@ $$
 &= 0, \\[6pt]
 - S\,\Delta \varphi
 + \alpha \left( \varphi - |\theta|\,\theta^3 \right)
-&= 0, \qquad \mathbf{x} \in \Omega \times [0,1].
+&= 0,
+\qquad \mathbf{x} \in \Omega \times [0,1].
 \end{aligned}
 $$
 
-<p align="center">
-  <img src="assets/gifs/overview.gif" width="600">
-</p>
-
+Here $\theta$ is the dimensionless temperature and $\varphi$ is the average radiation intensity.
 ---
 
 ## 🔬 Problem Statement
