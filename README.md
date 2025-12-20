@@ -5,19 +5,7 @@ Describe the scientific problem, method, and main result.
 
 The system describing radiative and conductive heat transfer is considered
 
-$$
-\begin{aligned}
-\frac{\partial \theta}{\partial t}
-- \mathrm{Fo}\,\Delta \theta
-+ \mathrm{Fo}\,\Xi_{\mathrm{rad}}
-\left( |\theta|\,\theta^3 - \varphi \right)
-&= 0, \\[6pt]
-- S\,\Delta \varphi
-+ \alpha \left( \varphi - |\theta|\,\theta^3 \right)
-&= 0,
-\qquad \mathbf{x} \in \Omega \times [0,1].
-\end{aligned}
-$$
+<img src="https://latex.codecogs.com/gif.latex?O_t=\text { Onset event at time bin } t " /> 
 
 Here $\theta$ is the dimensionless temperature and $\varphi$ is the average radiation intensity.
 ---
