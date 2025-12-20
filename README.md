@@ -8,7 +8,6 @@ The system describing radiative and conductive heat transfer is considered
 $$
 \frac{\partial \theta}{\partial t}-\textrm{Fo}\Delta\theta + \textrm{Fo}\Xi_{rad}(|\theta|\theta^3-\varphi)=0, \break
 -S\Delta \varphi +\alpha (\varphi - |\theta|\theta^3)=0, \;\;\;\mathbf{x}\in\Omega\times[0,1].
-\end{equation}
 $$
 Here $\theta$ is the dimensionless temperature, $\varphi$ is the average radiation intensity.
 
