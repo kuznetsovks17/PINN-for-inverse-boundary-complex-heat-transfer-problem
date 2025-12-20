@@ -1,0 +1,124 @@
+
+
+//real gamma 	= 0.0195;//0.4;
+real Tmax   = 1;//1000;//К
+real Fo = 1;
+real Birnn = 1*4;
+real S = 0.4;
+real alpha = 0.5;
+//real L = 0.25; //cm
+//real H = 0.04; //cm
+//real Bi = h;
+//real gamma = 0.1;
+
+func gamma = 0.005;
+//real L = 0.25;
+//real H = 0.25;
+
+real L = 1;//См
+real H = 1;//См
+
+int Nx = 150;
+int Ny = 150;
+
+
+border Rectangle1(t=0,L){x=L-t;y=H;label=1;} //верх
+border Rectangle2(t=0,H){x=0;y=H-t;label=1;} //лево
+border Rectangle3(t=0,L){x=t;y=0;label=1;}// низ 1
+border Rectangle4(t=0,H){x=L;y=t;label=1;}//право
+
+plot(Rectangle1(Nx)+Rectangle2(Ny)+Rectangle3(Nx)+ Rectangle4(Ny),wait=1);
+mesh Th=buildmesh(Rectangle1(Nx)+Rectangle2(Ny)+Rectangle3(Nx)+ Rectangle4(Ny));                
+plot(Th,wait=1,ps="1.ps");
+
+macro Grad(us) [dx(us), dy(us)] // EOM
+fespace Ph(Th, P1);
+Ph phi, theta;
+Ph u ,v;
+//Ph velx = 0.0, vely = 0.0;
+fespace Vh(Th, P2);
+Vh Bi = 0.291 + x*0.2355-0.215*x^2-0.021*x^3+ y*0.2355-0.215*y^2-0.021*y^3;
+plot(Bi,fill=1,wait=1,value=1);
+real Time = 1;
+real tau = 0.01;//Временной шаг,c
+int M = Time/tau;
+int N = 5;//Число шагов для метода Ньютона
+//int M = 3000;//Число шагов по времени
+
+//Ph gamma = 0.001;
+//Ph beta = 500*x+1;
+
+Ph thetaold = 0.9;//Начальная температура
+Ph thetao = 0.9;//Первое приближение для метода Ньютона
+Ph thetab = 0.3;//Температура на границе
+
+for (int i = 1; i<=M; i++){//Цикл по времени
+	for (int j = 1; j<=N; j++){//Цикл для метода Ньютона
+		solve HeatTransfer([phi,theta],[u,v]) =
+			int2d(Th)(1/tau * theta * u)
+			-int2d(Th)(1/tau * thetaold * u)
+			+int2d(Th)(Fo * Grad(theta)' * Grad(u))
+			+int1d(Th)(Bi * theta * u)
+			-int1d(Th)(Bi * thetab * u)
+			-int2d(Th)(Fo * Birnn * alpha * phi * u)
+			-int2d(Th)(Fo * Birnn * alpha * 3 * thetao^4 * u)
+			+int2d(Th)(Fo * Birnn * alpha * 4 * thetao^3 * theta * u)
+
+			+int2d(Th)(S * Grad(phi)' * Grad(v))
+			+int1d(Th)(gamma * phi * v)
+			-int1d(Th)(gamma * thetab^4 * v)
+			+int2d(Th)(alpha * phi * v)
+			+int2d(Th)(alpha * 3 * thetao^4 * v)
+			-int2d(Th)(alpha * 4 * thetao^3 * theta * v);
+		
+		thetao = theta;
+	}//Конец метода Ньютона
+	thetaold = theta;
+	plot(theta, fill = 1, wait = 0,value = 1,cmm =tau*i+"sec" );//, ps=tau*i+" sec.eps");
+//	plot(phi, fill = 1, wait = 0,value = 1);
+}
+//plot(theta, fill = 1, wait = 1,value = 1);
+//plot(phi, fill = 1, wait = 1,value = 1);
+
+int n =10000;
+real[int] xi(n);
+real[int] yi(n);
+real[int] ui(n);
+real[int] vi(n);
+//plot(s,cmm=" S  ", wait=1,value=1,fill=1);
+{
+    ifstream file("x_p.txt");
+    string line;
+    for (int k = 0; k < n; k=k+1){
+		getline(file, line);
+		xi[k]=atof(line);		
+	}
+}
+
+{
+    ifstream file("y_p.txt");
+    string line;
+    for (int k = 0; k < n; k=k+1){
+		getline(file, line);
+		yi[k]=atof(line);		
+	}
+}
+
+for (int k = 0; k < n; k=k+1){
+		ui[k]=theta(xi[k],yi[k]);		
+		vi[k]=phi(xi[k],yi[k]);		
+		
+}
+
+{
+ofstream file("theta.txt");
+    for (int k = 0; k < n; k=k+1){
+	file <<ui[k]<<endl;		
+	}
+}
+{
+ofstream file("phi.txt");
+    for (int k = 0; k < n; k=k+1){
+	file <<vi[k]<<endl;		
+	}
+}
