@@ -25,6 +25,7 @@ For inverse problem $\theta$, $\varphi$, $h$, $\gamma$ are unknown functions. An
 <p align="center">
   <img src="NE1/images/domain.png" width="250">
   <img src="NE2/images/domain.png" width="250">
+  <img src="NE3/images/domain.png" width="250">
 </p>
 
 ---
