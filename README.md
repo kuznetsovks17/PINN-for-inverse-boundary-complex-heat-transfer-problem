@@ -23,7 +23,8 @@ Here $\theta$ is the dimensionless temperature and $\varphi$ is the average radi
 For inverse problem $\theta$, $\varphi$, $h$, $\gamma$ are unknown functions. An a priori information in form of temperature values at observation pointss is known.
 
 <p align="center">
-  <img src="NE1/images/domain.png" width="200">
+  <img src="NE1/images/domain.png" width="250">
+  <img src="NE2/images/domain.png" width="250">
 </p>
 
 ---
