@@ -18,7 +18,13 @@ The system describing radiative and conductive heat transfer is considered
 ```math
 \frac{\partial \theta}{\partial n} + \textrm{Bi}(h)(\theta-\theta_b)=0, \;\;\; S\frac{\partial \varphi}{\partial n} + \gamma(\varphi-\theta_b^4)=0 \;\;\;\textrm{on}\;\Gamma,
 ```
-Here $\theta$ is the dimensionless temperature and $\varphi$ is the average radiation intensity, $Bi(h)$ - is the Biot number, $h$ - iss the boundary heat transfer coefficient, $\gamma$ - boundary surface reflection coefficient .
+Here $\theta$ is the dimensionless temperature and $\varphi$ is the average radiation intensity, $Bi(h)$ - is the Biot number, $h$ - is the boundary heat transfer coefficient, $\gamma$ - is the boundary surface reflection coefficient .
+
+For inverse problem $\theta$, $\varphi$, $h$, $\gamma$ are unknown functions. An a priori information in form of temperature values at observation pointss is known.
+
+<p align="center">
+  <img src="NE1/images/domain.png" width="600">
+</p>
 
 ---
 
