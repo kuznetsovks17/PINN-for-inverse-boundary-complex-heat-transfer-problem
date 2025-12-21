@@ -1,4 +1,4 @@
-# 🧪 PHYSICS INFORMED NEURAL NETWORKS FOR SOLVING INVERSE BOUNDARY-VALUE PROBLEMS OF COMPLEX HEAT TRANSFER
+# PHYSICS INFORMED NEURAL NETWORKS FOR SOLVING INVERSE BOUNDARY-VALUE PROBLEMS OF COMPLEX HEAT TRANSFER
 
 **Short abstract (2–4 lines)**  
 Describe the scientific problem, method, and main result.
@@ -30,54 +30,16 @@ For inverse problem $\theta$, $\varphi$, $h$, $\gamma$ are unknown functions. An
 
 ---
 
-## 🔬 Problem Statement
-Clearly state:
-- what problem is addressed
-- why it matters scientifically
-- limitations of existing methods
+## PINN method
+
+
+---
+## Numerical Experiments
 
 ---
 
-## 🧠 Methodology
-Describe:
-- theoretical background
-- models / equations
-- algorithms
-
-<p align="center">
-  <img src="assets/gifs/method.gif" width="600">
-</p>
-
----
-
-## ⚙️ Implementation Details
-- Architecture
-- Hyperparameters
-- Dataset description
-- Training procedure
-
----
-
-## 📊 Results
-Quantitative and qualitative results.
-
-<p align="center">
-  <img src="assets/gifs/results.gif" width="600">
-</p>
-
----
-
-## 📈 Experiments
-| Experiment | Description | Outcome |
-|----------|-------------|---------|
-| Exp 1 | Baseline | Accuracy 92% |
-| Exp 2 | Improved model | Accuracy 96% |
-
----
-
-## 🧪 Reproducibility
+##  Reproducibility
 ```bash
-git clone https://github.com/USERNAME/REPO.git
-cd REPO
+git clone https://github.com/kuznetsovks17/PINN-for-inverse-boundary-complex-heat-transfer-problem
+cd PINN-for-inverse-boundary-complex-heat-transfer-problem
 pip install -r requirements.txt
-jupyter notebook
