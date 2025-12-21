@@ -5,10 +5,9 @@ Describe the scientific problem, method, and main result.
 
 The system describing radiative and conductive heat transfer is considered
 
-**The Cauchy-Schwarz Inequality**
 
 ```math
-\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+\frac{\partial \theta}{\partial t}-\textrm{Fo}\Delta\theta + \textrm{Fo}\Xi_{rad}(|\theta|\theta^3-\varphi)=0,
 ```
 Here $\theta$ is the dimensionless temperature and $\varphi$ is the average radiation intensity.
 ---
