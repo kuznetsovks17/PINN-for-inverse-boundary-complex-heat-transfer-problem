@@ -10,7 +10,13 @@ The system describing radiative and conductive heat transfer is considered
 \frac{\partial \theta}{\partial t}-\textrm{Fo}\Delta\theta + \textrm{Fo}\Xi_{rad}(|\theta|\theta^3-\varphi)=0, 
 ```
 ```math
-\frac{\partial \theta}{\partial t}-\textrm{Fo}\Delta\theta + \textrm{Fo}\Xi_{rad}(|\theta|\theta^3-\varphi)=0, 
+-S\Delta \varphi +\alpha (\varphi - |\theta|\theta^3)=0, \;\;\;\mathbf{x}\in\Omega\times[0,1].
+```
+```math
+\theta|_{t=0}=\theta_0,
+```
+```math
+\frac{\partial \theta}{\partial n} + \textrm{Bi}(h)(\theta-\theta_b)=0, \;\;\; S\frac{\partial \varphi}{\partial n} + \gamma(\varphi-\theta_b^4)=0 \;\;\;\textrm{on}\;\Gamma,
 ```
 
 Here $\theta$ is the dimensionless temperature and $\varphi$ is the average radiation intensity.
