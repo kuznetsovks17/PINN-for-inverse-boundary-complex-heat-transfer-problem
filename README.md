@@ -18,8 +18,8 @@ The system describing radiative and conductive heat transfer is considered
 ```math
 \frac{\partial \theta}{\partial n} + \textrm{Bi}(h)(\theta-\theta_b)=0, \;\;\; S\frac{\partial \varphi}{\partial n} + \gamma(\varphi-\theta_b^4)=0 \;\;\;\textrm{on}\;\Gamma,
 ```
+Here $\theta$ is the dimensionless temperature and $\varphi$ is the average radiation intensity, $Bi(h)$ - is the Biot number, $h$ - iss the boundary heat transfer coefficient, $\gamma$ - boundary surface reflection coefficient .
 
-Here $\theta$ is the dimensionless temperature and $\varphi$ is the average radiation intensity.
 ---
 
 ## 🔬 Problem Statement
